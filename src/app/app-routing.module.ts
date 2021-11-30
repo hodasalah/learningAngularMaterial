@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
+  { path: "contactmanager", loadChildren: () => import("./contactmanger/contactmanager.module").then(m => m.ContactmanagerModule) },
   { path: "demo", loadChildren: () => import("./demo/demo.module").then(m => m.DemoModule) },
-  { path: "**", redirectTo: 'demo' }];
+  { path: "**", redirectTo: 'contactmanager' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
