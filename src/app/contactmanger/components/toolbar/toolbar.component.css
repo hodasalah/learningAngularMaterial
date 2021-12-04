@@ -1,0 +1,20 @@
+.toggle-btn {
+  display: none;
+  margin-right: 8px;
+  min-width: 50px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+mat-icon {
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 720px) {
+  .toggle-btn {
+    display: flex;
+  }
+}

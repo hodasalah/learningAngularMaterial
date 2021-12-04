@@ -4,3 +4,11 @@
 ng add @angular/material
 {its prefere that make a module for material ui}
 npm i -s @angular/flex-layout
+ ########################
+ ###################################
+ ### BREAK pOINT OBSERVER
+ #########################
+ ==> Evaluate media query
+ - current viewport
+ - change to 
+ - import from cdk /layout module

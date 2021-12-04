@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DemoModule } from './demo/demo.module';
-import { ContactmanagerComponent } from './contactmanger/contactmanager.component';
+
 import { ContactmanagerModule } from './contactmanger/contactmanager.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -21,7 +23,9 @@ import { ContactmanagerModule } from './contactmanger/contactmanager.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoModule,
-    ContactmanagerModule
+    ContactmanagerModule,
+    HttpClientModule
+
 
   ],
   providers: [],
