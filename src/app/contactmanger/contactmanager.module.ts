@@ -11,6 +11,7 @@ import { ContactmanagerComponent } from './contactmanager.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 const routes = [{
@@ -24,7 +25,8 @@ const routes = [{
     ContactmanagerComponent,
     MainContentComponent,
     SideNavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    NotesComponent
   ],
   imports: [
     CommonModule,
