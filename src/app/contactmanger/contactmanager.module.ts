@@ -12,10 +12,12 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NotesComponent } from './components/notes/notes.component';
+import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes = [{
-  path: '', component: ContactmanagerComponent, children: [{ path: ':id', component: MainContentComponent },{ path: '', component: MainContentComponent }]
+  path: '', component: ContactmanagerComponent, children: [{ path: ':id', component: MainContentComponent }, { path: '', component: MainContentComponent }]
 },
 { path: "**", redirectTo: "" }
 ]
@@ -26,7 +28,8 @@ const routes = [{
     MainContentComponent,
     SideNavComponent,
     ToolbarComponent,
-    NotesComponent
+    NotesComponent,
+    NewContactDialogComponent
   ],
   imports: [
     CommonModule,
@@ -34,9 +37,10 @@ const routes = [{
     MaterialModule,
     FlexLayoutModule,
     RouterModule.forChild(routes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
-  providers:[UserService]
+  providers: [UserService]
 })
 export class ContactmanagerModule { }

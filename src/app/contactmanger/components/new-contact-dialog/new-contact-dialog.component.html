@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>ADD NEW CONTACT</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Avatar</mat-label>
+    <mat-select [(ngModel)]='user.avatar'>
+      <mat-select-trigger>
+        <mat-icon svgIcon="{{user.avatar}}"></mat-icon> {{user.avatar}}
+      </mat-select-trigger>
+      <mat-option *ngFor="let avatar of avatars" [value]="avatar">
+        <mat-icon svgIcon="{{avatar}}"></mat-icon>{{avatar}}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [formControl]="name" required>
+    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field color="accent" appearance="fill">
+    <mat-label>Birth Date</mat-label>
+    <input matInput [matDatepicker]="picker1" [(ngModel)]='user.birthDate'>
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Bio</mat-label>
+    <textarea matInput [(ngModel)]='user.bio'></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color='primary' (click)='save()'>Save</button>
+  <button mat-button color='danger' (click)='cancel()'>Cancel</button>
+</mat-dialog-actions>

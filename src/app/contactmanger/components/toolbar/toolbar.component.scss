@@ -13,6 +13,10 @@ mat-icon {
   line-height: 50px;
   color: rgb(255, 255, 255);
 }
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 @media screen and (max-width: 720px) {
   .toggle-btn {
     display: flex;

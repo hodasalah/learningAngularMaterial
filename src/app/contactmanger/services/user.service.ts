@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user';
 
@@ -18,6 +19,14 @@ export class UserService {
   }
   userById(id: number): User | undefined {
     return this.dataStore.users.find(u => u.id == id)
+  }
+  addUser(user: User): Promise<User> {
+    return new Promise((resolver, reject) => {
+      user.id = this.dataStore.users.length + 1
+      this.dataStore.users.push(user);
+      this._users.next(Object.assign({}, this.dataStore).users);
+      resolver(user)
+    })
   }
   loadAll() {
     const DATA_URL = 'https://angular-material-api.azurewebsites.net/users'
